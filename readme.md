@@ -9,7 +9,7 @@
 
 ### Debian系
 
-1. `sudo apt-get install -y build-essentials libsqlite3-dev libxml2-dev git`
+1. `sudo apt-get install -y build-essential libsqlite3-dev libxml2-dev git`
 
 ## Ruby/必要Gemをインストール
 
