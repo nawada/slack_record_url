@@ -48,7 +48,7 @@ class DBCommand
   # データ登録
   def regist_data(url, title, user_name)
     # SQLiteはDate型が無いため、文字列を登録する
-    tmp = Time.now
+    tmp = Time.now.localtime('+09:00')
     tmp = tmp.to_s
     reg_date = tmp.slice(0, tmp.index(' +'))
 
