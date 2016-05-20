@@ -5,11 +5,11 @@
 ### RHEL系
 
 1. `sudo yum groupinstall -y "Development Tools"`
-1. `sudo yum install -y kernel-devel kernel-headers sqlite-devel libxml2-devel git`
+1. `sudo yum install -y kernel-devel kernel-headers sqlite-devel libxml2-devel git openssl-devel readline-devel zlib-devel`
 
 ### Debian系
 
-1. `sudo apt-get install -y build-essential libsqlite3-dev libxml2-dev git`
+1. `sudo apt-get install -y build-essential libsqlite3-dev libxml2-dev git libssl-dev libreadline-dev zlib1g-dev`
 
 ## Ruby/必要Gemをインストール
 
@@ -17,8 +17,11 @@
 1. `cd ~/.rbenv && src/configure && make -C src && cd ~`
 1. `echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc`
 1. `~/.rbenv/bin/rbenv init`
+1. `echo 'eval "$(rbenv init -)"' >> ~/.bashrc`
 1. `git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build`
+1. `source ~/.bashrc`
 1. `rbenv install 2.3.1`
+1. `rbenv global 2.3.1`
 1. `gem update --system`
 1. `gem install bundler`
 
