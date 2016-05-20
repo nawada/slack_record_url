@@ -22,7 +22,15 @@
 1. `gem update --system`
 1. `gem install bundler`
 
+## 設定
+
+1. Slackの Custom Integrations (`https://YOUR_TEAM.slack.com/apps/manage/custom-integrations`) から `Outgoing WebHooks` を有効にしてよしなに設定する
+    * [この辺り](http://qiita.com/chike0905/items/58222a99be460f325ab8)をみるといいかも？
+1. `app.rb` の `CHANNEL_TOKEN` にSlackのOutgoing WebHooksの `Token` を設定する
+
 ## Gemfileインストール〜起動
 
 1. `bundle install --path vendor/bundle`
 1. `bundle exec rackup -o 0.0.0.0 -p 4567`
+
+上記で実行すると、フォアグラウンドで走ってしまうので、バックグラウンドタスクにしたいのであればUnicornとか使えばいいと思うよ。
