@@ -30,18 +30,8 @@ class App < Sinatra::Base
   end
 
   get '/' do
-    values = DATABASE.find_rows
-
-    html = '<table border="1px"><tbody>'
-    values.each { |v|
-      html += '<tr>'
-      html += "<td>#{v[4]}</td>"
-      html += "<td>#{v[3]}</td>"
-      html += "<td><a href='#{v[1]}' target='_blank'>#{v[2].gsub(/</, '&lt;').gsub(/>/, '&gt;')}</a></td>"
-      html += '</tr>'
-    }
-    html += '</tbody></table>'
-    html
+    @values = DATABASE.find_rows
+    erb :index
   end
 
   post '/' do
