@@ -2,7 +2,7 @@ var webpack = require('webpack');
 
 module.exports = {
   devtool: '#source-map',
-  entry: './front/Index.js',
+  entry: './front/index.js',
   output: {
     path: './public',
     filename: 'bundle.js'

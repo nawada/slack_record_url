@@ -33,9 +33,9 @@ class App < Sinatra::Base
     TechInfo.all.to_json
   end
 
-  post '/new' do
-    # token = params[:token].strip
-    # return if token != CHANNEL_TOKEN
+  post '/' do
+    token = params[:token].strip
+    return if token != CHANNEL_TOKEN
 
     urls = params[:text].split("\n").map { |tmp| tmp.strip }.select { |text|
       text.gsub!(/<(https?:\/\/\S+)>/, '\1')
@@ -43,8 +43,7 @@ class App < Sinatra::Base
     }
     return if urls.size == 0
 
-    user_name = %w(n.wada nagao k.otsuka mouri motooka yusuke.s).sample
-    # user_name = params[:user_name]
+    user_name = params[:user_name]
     urls.each { |url|
       parser = ParseHTML.new
       title = parser.get_title(url)
@@ -61,5 +60,3 @@ class App < Sinatra::Base
     }
   end
 end
-
-App.run!
