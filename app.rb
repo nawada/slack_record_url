@@ -24,6 +24,11 @@ class App < Sinatra::Base
     erb :index
   end
 
+  get '/api/values' do
+    response['Access-Control-Allow-Origin'] = '*'
+    TechInfo.all.map { |item| item.attributes.values }.to_json
+  end
+
   get '/api/v1/infos' do
     TechInfo.all.to_json
   end
