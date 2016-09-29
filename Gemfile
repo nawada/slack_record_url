@@ -15,3 +15,5 @@ gem 'sqlite3', '~> 1.3.11'
 # group :production do
 #   gem 'pg', '~> 0.18.4'
 # end
+
+gem 'activerecord-refresh_connection', '~> 0.0.5'
